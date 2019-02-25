@@ -10,6 +10,10 @@ firebase.initializeApp({
   'messagingSenderId': '189688585460'
 });
 
+if (!firebase.messaging.isSupported()) {
+  return;
+}
+
 // Retrieve an instance of Firebase Messaging so that it can handle background
 // messages.
 const messaging = firebase.messaging();
